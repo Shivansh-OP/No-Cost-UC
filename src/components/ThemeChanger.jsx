@@ -13,8 +13,8 @@ export function ThemeChanger() {
     }
 
     const themeIcons = {
-        light: <SunIcon className='size-6'/>,
-        dark: <MoonIcon className='size-6 text-white'/>
+        light: <SunIcon className={`size-6 ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>,
+        dark: <MoonIcon className={`size-6 ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>
     }
 
     return (
