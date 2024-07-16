@@ -48,7 +48,8 @@ export function Header() {
                             <div className='flex justify-center items-center space-x-2 mt-4 sm:mt-1'>
                                 <img src={logo} className='h-14 w-auto sm:h-16' alt='Logo'/>
                                 <h1 className={`font-customFont text-3xl
-                                    ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}>
+                                    ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
+                                >
                                     No <span className={`${currentTheme === 'dark' ? 'text-secondaryColor' : 'text-primaryColor'}`}>Cost</span> UC
                                 </h1>
                             </div>
@@ -58,19 +59,19 @@ export function Header() {
                                 showDropdown ? (
                                     <XMarkIcon onClick={openDropdown}
                                         className={`size-6 relative mt-2 sm:hidden
-                                        ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}
+                                        ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                     />
                                 ) : (
                                     <Bars3Icon onClick={openDropdown}
                                         className={`size-6 relative mt-2 sm:hidden
-                                        ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}
+                                        ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                     />
                                 )
                             }
                             <div className='flex justify-end items-start'>
                                 <div className={`sm:flex sm:items-center sm:space-x-6 sm:bg-transparent
                                     ${showDropdown ? 'absolute w-40 text-center mt-3 p-3 rounded-lg' : 'hidden'}
-                                    ${currentTheme === 'dark' ? 'bg-white' : 'bg-black'}`}
+                                    ${currentTheme === 'dark' ? 'bg-whiteColor' : 'bg-blackColor'}`}
                                 >
                                     {navbarItems.map((item) => (
                                         <li key={item.name}>
@@ -88,7 +89,7 @@ export function Header() {
                                     <div className='space-x-5 sm:-mt-1.5'>
                                         <button className='rounded-lg h-11 px-3 border-solid border-2 border-primaryColor hover:bg-primaryColor'>
                                             <ShoppingCartIcon className={`size-6 
-                                                ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}
+                                                ${currentTheme === 'dark' ? 'text-blackColor sm:text-whiteColor' : 'text-whiteColor sm:text-blackColor'}`}
                                             />
                                         </button>
                                         <ThemeChanger />

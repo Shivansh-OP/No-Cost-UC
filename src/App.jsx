@@ -6,7 +6,7 @@ function App() {
   const currentTheme = useSelector((state) => state.theme.initialTheme)
 
   return (
-    <div className= {`h-screen ${currentTheme === 'dark' ? 'bg-black' : 'bg-white'}`}>
+    <div className= {`h-screen ${currentTheme === 'dark' ? 'bg-blackColor' : 'bg-whiteColor'}`}>
       <Header />
       <Footer />
     </div>
