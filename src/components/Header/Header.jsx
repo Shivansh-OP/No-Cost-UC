@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { Button, Container, ThemeChanger } from '../index'
 import { useSelector } from 'react-redux'
-import { Bars3Icon, ShoppingCartIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { ShoppingCart, Menu, X } from 'lucide-react'
 
 export function Header() {
 
@@ -57,13 +57,15 @@ export function Header() {
                         <ul>
                             {
                                 showDropdown ? (
-                                    <XMarkIcon onClick={openDropdown}
+                                    <X size={24} strokeWidth={1.5}
+                                        onClick={openDropdown}
                                         className={`size-6 relative mt-2 sm:hidden
                                         ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                     />
                                 ) : (
-                                    <Bars3Icon onClick={openDropdown}
-                                        className={`size-6 relative mt-2 sm:hidden
+                                    <Menu size={24} strokeWidth={1.5}
+                                        onClick={openDropdown}
+                                        className={`relative mt-2 sm:hidden
                                         ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                     />
                                 )
@@ -88,8 +90,8 @@ export function Header() {
                                     ))}
                                     <div className='space-x-5 sm:-mt-1.5'>
                                         <button className='rounded-lg h-11 px-3 border-solid border-2 border-primaryColor hover:bg-primaryColor'>
-                                            <ShoppingCartIcon className={`size-6 
-                                                ${currentTheme === 'dark' ? 'text-blackColor sm:text-whiteColor' : 'text-whiteColor sm:text-blackColor'}`}
+                                            <ShoppingCart size={24} strokeWidth={1.5}
+                                                className={`${currentTheme === 'dark' ? 'text-blackColor sm:text-whiteColor' : 'text-whiteColor sm:text-blackColor'}`}
                                             />
                                         </button>
                                         <ThemeChanger />

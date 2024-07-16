@@ -1,7 +1,7 @@
 import React from 'react'
 import { themeChanger } from '../features/theme/themeSlice';
 import { useDispatch, useSelector } from 'react-redux'
-import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+import { Moon, Sun } from 'lucide-react';
 
 export function ThemeChanger() {
 
@@ -13,8 +13,8 @@ export function ThemeChanger() {
     }
 
     const themeIcons = {
-        light: <SunIcon className={`size-6 ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>,
-        dark: <MoonIcon className={`size-6 ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>
+        light: <Sun size={24} strokeWidth= {1.5} className={`${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>,
+        dark: <Moon size={24} strokeWidth= {1.5} className={`${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}/>
     }
 
     return (
