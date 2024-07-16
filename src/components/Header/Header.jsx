@@ -43,55 +43,56 @@ export function Header() {
         <>
             <header>
                 <Container>
-                    <nav className='flex flex-wrap pt-5'>
-                        <div className='ml-10 sm:ml-28'> 
-                            <Link to='/'>
-                                <div className='flex'>
-                                    <img src={logo} className='h-16 w-auto mt-1'  alt='Logo'/>
-                                    <h1 className={`font-customFont text-3xl mx-4 my-5
-                                        ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}>
-                                        No <span className={`${currentTheme === 'dark' ? 'text-secondaryColor' : 'text-primaryColor'}`}>Cost</span> UC
-                                    </h1>
-                                </div>
-                            </Link>
-                        </div>
-                        <ul className='sm:ml-auto'>
+                    <nav className='flex justify-center items-center space-x-28 sm:p-5 sm:justify-evenly sm:space-x-72'>
+                        <Link to='/'>
+                            <div className='flex justify-center items-center space-x-2 mt-4 sm:mt-1'>
+                                <img src={logo} className='h-14 w-auto sm:h-16' alt='Logo'/>
+                                <h1 className={`font-customFont text-3xl
+                                    ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}>
+                                    No <span className={`${currentTheme === 'dark' ? 'text-secondaryColor' : 'text-primaryColor'}`}>Cost</span> UC
+                                </h1>
+                            </div>
+                        </Link>
+                        <ul>
                             {
                                 showDropdown ? (
                                     <XMarkIcon onClick={openDropdown}
-                                        className={`size-6 mt-6 ml-28 relative sm:hidden
+                                        className={`size-6 relative mt-2 sm:hidden
                                         ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}
                                     />
                                 ) : (
                                     <Bars3Icon onClick={openDropdown}
-                                        className={`size-6 mt-6 ml-28 relative sm:hidden
+                                        className={`size-6 relative mt-2 sm:hidden
                                         ${currentTheme === 'dark' ? 'text-white' : 'text-black'}`}
                                     />
                                 )
                             }
-                            <div className={`sm:flex sm:space-x-6 sm:mr-28 sm:bg-transparent
-                                ${showDropdown ? 'block mt-7 -ml-14 px-5 py-1 text-center rounded-xl fixed sm:mt-0' : 'hidden'}
-                                ${currentTheme === 'dark' ? 'bg-white' : 'bg-black'}`}
-                            >
-                                {navbarItems.map((item) => (
-                                    <li key={item.name}>
-                                        <Button onClick={() => {
-                                            navigate(item.url);
-                                            closeDropdown();
-                                        }}
-                                        className='w-40 text-xl rounded-lg px-7 py-2 my-2.5 sm:w-auto hover:bg-secondaryColor active:bg-secondaryColor'
-                                        >
-                                            {item.name}
-                                        </Button>
-                                    </li>
-                                ))}
-                                <div className='space-x-4 sm:mr-28'>
-                                    <button className='rounded-lg h-11 px-3 mt-2.5 border-solid border-2 border-primaryColor hover:bg-primaryColor'>
-                                        <ShoppingCartIcon className={`size-6 
-                                            ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}
-                                        />
-                                    </button>
-                                    <ThemeChanger />
+                            <div className='flex justify-end items-start'>
+                                <div className={`sm:flex sm:items-center sm:space-x-6 sm:bg-transparent
+                                    ${showDropdown ? 'absolute w-40 text-center mt-3 p-3 rounded-lg' : 'hidden'}
+                                    ${currentTheme === 'dark' ? 'bg-white' : 'bg-black'}`}
+                                >
+                                    {navbarItems.map((item) => (
+                                        <li key={item.name}>
+                                            <Button onClick={() => {
+                                                navigate(item.url);
+                                                closeDropdown();
+                                            }}
+                                            className='rounded-lg text-xl w-32 py-1 my-1.5 hover:bg-secondaryColor active:bg-secondaryColor
+                                                sm:w-auto sm:px-7 sm:py-2'
+                                            >
+                                                {item.name}
+                                            </Button>
+                                        </li>
+                                    ))}
+                                    <div className='space-x-5 sm:-mt-1.5'>
+                                        <button className='rounded-lg h-11 px-3 border-solid border-2 border-primaryColor hover:bg-primaryColor'>
+                                            <ShoppingCartIcon className={`size-6 
+                                                ${currentTheme === 'dark' ? 'text-black sm:text-white' : 'text-white sm:text-black'}`}
+                                            />
+                                        </button>
+                                        <ThemeChanger />
+                                    </div>
                                 </div>
                             </div>
                         </ul>
