@@ -96,7 +96,7 @@ export function Footer() {
                         ${currentTheme === 'dark' ? 'border-secondaryColor' : 'border-primaryColor'}`}
                     />
                 </div>
-                <div className='my-5 sm:flex sm:justify-around sm:items-center sm:space-x-96'>
+                <div className='py-5 sm:flex sm:justify-around sm:items-center sm:space-x-96'>
                     <h3 className={`font-customFont text-lg text-center
                         ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}>
                         &copy; Copyright 2024. All Rights Reserved by No <span className={`${currentTheme === 'dark' ? 'text-secondaryColor' : 'text-primaryColor'}`}>Cost</span> UC.
