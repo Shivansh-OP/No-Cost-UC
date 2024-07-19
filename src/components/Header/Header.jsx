@@ -43,11 +43,12 @@ export function Header() {
         <>
             <header>
                 <Container>
-                    <nav className='flex justify-center items-center space-x-28 sm:p-5 sm:justify-evenly sm:space-x-72'>
+                    <nav className={`flex justify-center items-center space-x-28 pb-2 fixed top-0 left-0 right-0 z-50 sm:p-4 sm:justify-evenly sm:space-x-72
+                        ${currentTheme === 'dark' ? 'bg-blackColor text-whiteColor' : 'bg-whiteColor text-blackColor'}`}>
                         <Link to='/'>
                             <div className='flex justify-center items-center space-x-2 mt-4 sm:mt-1'>
-                                <img src={logo} className='h-14 w-auto sm:h-16' alt='Logo'/>
-                                <h1 className={`font-customFont text-3xl
+                                <img src={logo} className='h-14 w-auto sm:h-16 ' alt='Logo'/>
+                                <h1 className={`font-customFont text-3xl 
                                     ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                 >
                                     No <span className={`${currentTheme === 'dark' ? 'text-secondaryColor' : 'text-primaryColor'}`}>Cost</span> UC
@@ -59,7 +60,7 @@ export function Header() {
                                 showDropdown ? (
                                     <X size={24} strokeWidth={1.5}
                                         onClick={openDropdown}
-                                        className={`size-6 relative mt-2 sm:hidden
+                                        className={`relative mt-2 sm:hidden
                                         ${currentTheme === 'dark' ? 'text-whiteColor' : 'text-blackColor'}`}
                                     />
                                 ) : (
@@ -72,7 +73,7 @@ export function Header() {
                             }
                             <div className='flex justify-end items-start'>
                                 <div className={`sm:flex sm:items-center sm:space-x-6 sm:bg-transparent
-                                    ${showDropdown ? 'absolute w-40 text-center mt-3 p-3 rounded-lg' : 'hidden'}
+                                    ${showDropdown ? 'absolute w-40 text-center mt-7 p-3 rounded-lg' : 'hidden'}
                                     ${currentTheme === 'dark' ? 'bg-whiteColor' : 'bg-blackColor'}`}
                                 >
                                     {navbarItems.map((item) => (
