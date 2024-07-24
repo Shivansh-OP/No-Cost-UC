@@ -112,11 +112,11 @@ export function Header() {
                                         </li>
                                     ))}
                                     <div className='space-x-5 sm:-mt-1.5'>
-                                        <button className='rounded-lg h-11 px-3 border-solid border-2 border-primaryColor hover:bg-primaryColor'>
+                                        <Button className='rounded-lg h-11 px-3 bg-transparent border-solid border-2 border-primaryColor hover:bg-primaryColor'>
                                             <ShoppingCart size={24} strokeWidth={1.5}
                                                 className={`${currentTheme === 'dark' ? 'text-blackColor sm:text-whiteColor' : 'text-whiteColor sm:text-blackColor'}`}
                                             />
-                                        </button>
+                                        </Button>
                                         <ThemeChanger />
                                     </div>
                                 </div>
